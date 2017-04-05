@@ -52,6 +52,23 @@ Enumeration.prototype = {
 
     return someMatch
 
+  },
+
+  every: function(array, callback){
+    var falseCounter = 0
+
+    array.forEach(function(searchItem){
+      if (!callback(searchItem)){
+        falseCounter++
+      }
+      
+    })
+
+    if (falseCounter > 0){
+      return false
+    } else {
+      return true
+    }
   }
 
 }
