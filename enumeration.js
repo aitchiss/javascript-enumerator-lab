@@ -69,6 +69,17 @@ Enumeration.prototype = {
     } else {
       return true
     }
+  },
+
+  reduce: function(array, callback){
+
+    var finalCount = 0;
+
+    for (i = 0; i < array.length - 1; i += 2){
+      finalCount += callback(array[i], array[i + 1]);
+    }
+
+    return finalCount;
   }
 
 }
