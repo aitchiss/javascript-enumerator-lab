@@ -10,11 +10,22 @@ Enumeration.prototype = {
     array.forEach(function(searchItem){
       
       if ( callback(searchItem) === true ){
-        // console.log(searchItem)
         result = searchItem;
       }
     })
     return result;
+  },
+
+  map: function(array, callback){
+    var newArray = [];
+    array.forEach(function(searchItem){
+
+      newArray.push(callback(searchItem));
+
+    })
+
+      return newArray;
+
   }
 
 }
