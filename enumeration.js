@@ -26,6 +26,18 @@ Enumeration.prototype = {
 
       return newArray;
 
+  },
+
+  filter: function(array, callback){
+    var newArray = []
+    array.forEach(function(searchItem){
+       if(callback(searchItem)){
+        newArray.push(searchItem)
+       }
+
+      
+    })
+    return newArray
   }
 
 }
