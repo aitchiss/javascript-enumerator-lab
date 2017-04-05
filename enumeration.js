@@ -38,6 +38,20 @@ Enumeration.prototype = {
       
     })
     return newArray
+  },
+
+  some: function(array, callback){
+    var someMatch = false
+
+    array.forEach(function(searchItem){
+
+      if (callback(searchItem)){
+        someMatch = true
+      }
+    })
+
+    return someMatch
+
   }
 
 }
